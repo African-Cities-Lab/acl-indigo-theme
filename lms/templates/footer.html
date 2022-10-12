@@ -7,25 +7,81 @@
   from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
 %>
 <% footer = get_footer(is_secure=is_secure) %>
-<% icp_license_info = getattr(settings, 'ICP_LICENSE_INFO', {})%>
 <%namespace name='static' file='static_content.html'/>
 
+
+<div class="wrapper wrapper-footer acl-footer">
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+
+        <ul class="main-links">
+          <li><a href="https://africancitieslab.org/en/about/">About</a></li>
+          <li><a href="https://africancitieslab.org/en/contact/">Contact</a></li>
+          <li><a href="https://africancitieslab.org/en/terms-conditions/">Terms & Conditions</a></li>
+          <li><a href="https://africancitieslab.org/en/gdpr/">GDPR</a></li>
+        </ul>
+        
+        % if context.get('include_language_selector', footer_language_selector_is_enabled()):
+          <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
+        % endif
+
+      </div>
+
+      <hr>
+
+      <div class="footer-bottom">
+        <div>
+          <ul class="social-links">
+            <li>
+              <a href="https://twitter.com/AfricanCtiesLab"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/african-cities-lab/?viewAsMember=true"><i class="fa fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/African-Cities-Lab-103073095772023"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://instagram.com/africancitieslab?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+              <a href="https://medium.com/@African_Cities_Lab"><i class="fa fa-medium"></i></a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UC22_61it3OdPBNj3CwkndUA"><i class="fa fa-youtube"></i></a>
+            </li>
+          </ul>
+          <p class="copyright">
+            © Copyright 2022 African Cities Lab. All rights reserved.
+          </p>
+        </div>
+        <div class="wrapper-logo">
+          <a href="/">
+            <img src="${static.url('images/logo-white.png')}" alt="African Cities Lab" width="175">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
 % if uses_bootstrap:
-  <div class="container-fluid wrapper-footer">
+  <!--div class="container-fluid wrapper-footer">
     <footer>
       <div class="row">
         <div class="col-md-9">
-          {% if INDIGO_FOOTER_NAV_LINKS %}
-          <nav class="navbar site-nav navbar-expand-sm" aria-label="${_('About')}">
+          
+          <nav class="navbar site-nav navbar-expand-sm" aria-label="">
             <ul class="navbar-nav">
-              {% for link in INDIGO_FOOTER_NAV_LINKS %}
+              
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ link['url'] }}">{{ link['title'] }}</a>
+                  <a class="nav-link" href="#">custom_link</a>
                 </li>
-              {% endfor %}
+              
             </ul>
           </nav>
-          {% endif %}
+          
 
           ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
           <p class="copyright">${footer['copyright']}
@@ -37,17 +93,17 @@
               % endif
           </p>
 
-          {% if INDIGO_FOOTER_LEGAL_LINKS %}
+          
           <nav class="navbar legal-nav navbar-expand-sm" aria-label="${_('Legal')}">
             <ul class="navbar-nav">
-              {% for link in INDIGO_FOOTER_LEGAL_LINKS %}
+              
                 <li class="nav-item">
-                  <a class="nav-link" href="{{ link['url'] }}">{{ link['title'] }}</a>
+                  <a class="nav-link" href=""></a>
                 </li>
-              {% endfor %}
+              
             </ul>
           </nav>
-          {% endif %}
+          
         </div>
         <div class="col-md-3">
           ## Please leave this link and use one of the logos provided
@@ -69,9 +125,9 @@
         </div>
       </div>
     </footer>
-  </div>
+  </div-->
 % else:
-  <div class="wrapper wrapper-footer">
+  <!--div class="wrapper wrapper-footer">
     <footer id="footer-openedx" class="grid-container"
       ## When rendering the footer through the branding API,
       ## the direction may not be set on the parent element,
@@ -81,17 +137,15 @@
       % endif
     >
       <div class="colophon">
-        {% if INDIGO_FOOTER_NAV_LINKS %}
-        <nav class="nav-colophon" aria-label="${_('About')}">
+       
+        <nav class="nav-colophon">
           <ol>
-              {% for link in INDIGO_FOOTER_NAV_LINKS %}
-              <li>
-                <a href="{{ link['url'] }}">{{ link['title'] }}</a>
-              </li>
-              {% endfor %}
+            <li class="nav-colophon-01">
+              <a id="" href="">About</a>
+            </li>
           </ol>
         </nav>
-        {% endif %}
+        
         % if context.get('include_language_selector', footer_language_selector_is_enabled()):
             <%include file="${static.get_template_path('widgets/footer-language-selector.html')}"/>
         % endif
@@ -106,32 +160,25 @@
               ## can be included in the footer on other sites
               ## (e.g. a blog or marketing front-end) to provide a consistent
               ## user experience.  See the branding app for details.
-              <img alt="${_('organization logo')}" src="${footer['logo_image']}">
+              <img alt="" src="">
             </a>
           </p>
         </div>
 
         ## Site operators: Please do not remove this paragraph! This attributes back to edX and makes your acknowledgement of edX's trademarks clear.
-          <p class="copyright">${footer['copyright']}
-              % if icp_license_info.get('icp_license'):
-                ${u" | {text}".format(text=icp_license_info.get('text'))}
-                <a href="${icp_license_info.get('icp_license_link', '#')}">
-                    ${u" {icp}".format(icp=icp_license_info.get('icp_license'))}
-                </a>
-              % endif
+          <p class="copyright">
+            © Copyright 2022 African Cities Lab. All rights reserved.
           </p>
 
-        {% if INDIGO_FOOTER_LEGAL_LINKS %}
-        <nav class="nav-legal" aria-label="${_('Legal')}">
+        
+        <nav class="nav-legal" aria-label="">
           <ul>
-            {% for link in INDIGO_FOOTER_LEGAL_LINKS %}
               <li>
-                <a href="{{ link['url'] }}">{{ link['title'] }}</a>
+                <a href=""></a>
               </li>
-            {% endfor %}
           </ul>
         </nav>
-        {% endif %}
+        
       </div>
 
       ## Please leave this link and use one of the logos provided
@@ -141,17 +188,14 @@
       % if not hide_openedx_link:
       <div class="footer-about-openedx">
         <p>
-          <a href="https://docs.tutor.overhang.io" rel="noopener" target="_blank">
-            <img src="${static.url('images/tutor-logo.png')}" alt="Runs on Tutor" height="42" />
-          </a>
-          <a href="${footer['openedx_link']['url']}" rel="noopener" target="_blank">
-            <img src="${static.url('images/openedx-logo.png')}" alt="${footer['openedx_link']['title']}" width="140" />
+          <a href="" rel="noopener" target="_blank">
+            <img src="${static.url('images/logo-white.png')}" alt="African Cities Lab" width="150" />
           </a>
         </p>
       </div>
       % endif
     </footer>
-  </div>
+  </div-->
 % endif
 % if include_dependencies:
   <%static:js group='base_vendor'/>

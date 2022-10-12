@@ -1,112 +1,102 @@
-// SansSerif
+// Biko font
 @font-face {
-  font-family: 'Plex';
-  src: url('#{$static-path}/fonts/IBMPlexSans-Light.ttf') format('truetype');
+  font-family: 'Biko';
+  src: url('#{$static-path}/fonts/biko/Biko_Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Biko';
+  src:
+    url('#{$static-path}/fonts/biko/Biko_Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Biko';
+  src:
+    url('#{$static-path}/fonts/biko/Biko_Black.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+// Gotham font
+@font-face {
+  font-family: 'Gotham';
+  src:
+    url('#{$static-path}/fonts/gotham/Gotham-Light.eot') format('embedded-opentype'),
+    url('#{$static-path}/fonts/gotham/Gotham-Light.woff2') format('woff2'),
+    url('#{$static-path}/fonts/gotham/Gotham-Light.woff') format('woff'),
+    url('#{$static-path}/fonts/gotham/Gotham-Light.ttf') format('truetype');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Plex';
+  font-family: 'Gotham';
   src:
-    url('#{$static-path}/fonts/IBMPlexSans-LightItalic.ttf') format('truetype');
+    url('#{$static-path}/fonts/gotham/Gotham-LightItalic.eot') format('embedded-opentype'),
+  url('#{$static-path}/fonts/gotham/Gotham-LightItalic.woff2') format('woff2'),
+  url('#{$static-path}/fonts/gotham/Gotham-LightItalic.woff') format('woff'),
+  url('#{$static-path}/fonts/gotham/Gotham-LightItalic.ttf') format('truetype');
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Plex';
+  font-family: 'Gotham';
   src:
-    url('#{$static-path}/fonts/IBMPlexSans-Regular.ttf') format('truetype');
-  font-weight: 400;
+    url('#{$static-path}/fonts/gotham/Gotham-Book.eot') format('embedded-opentype'),
+  url('#{$static-path}/fonts/gotham/Gotham-Book.woff2') format('woff2'),
+  url('#{$static-path}/fonts/gotham/Gotham-Book.woff') format('woff'),
+  url('#{$static-path}/fonts/fonts/gotham/Gotham-Book.ttf') format('truetype');
+  font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Plex';
+  font-family: 'Gotham';
   src:
-    url('#{$static-path}/fonts/IBMPlexSans-Italic.ttf') format('truetype');
-  font-weight: 400;
+    url('#{$static-path}/fonts/gotham/Gotham-BookItalic.eot') format('embedded-opentype'),
+  url('#{$static-path}/fonts/gotham/Gotham-BookItalic.woff2') format('woff2'),
+  url('#{$static-path}/fonts/gotham/Gotham-BookItalic.woff') format('woff'),
+  url('#{$static-path}/fonts/gotham/Gotham-BookItalic.ttf') format('truetype');
+  font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Plex';
+  font-family: 'Gotham';
   src:
-    url('#{$static-path}/fonts/IBMPlexSans-SemiBold.ttf') format('truetype');
-  font-weight: 600;
+    url('#{$static-path}/fonts/gotham/Gotham-Medium.eot') format('embedded-opentype'),
+    url('#{$static-path}/fonts/gotham/Gotham-Medium.woff2') format('woff2'),
+    url('#{$static-path}/fonts/gotham/Gotham-Medium.woff') format('woff'),
+    url('#{$static-path}/fonts/gotham/Gotham-Medium.ttf') format('truetype');
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Plex';
+  font-family: 'Gotham';
   src:
-    url('#{$static-path}/fonts/IBMPlexSans-SemiBoldItalic.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Plex';
-  src:
-    url('#{$static-path}/fonts/IBMPlexSans-Bold.ttf') format('truetype');
-  font-weight: 700;
+    url('#{$static-path}/fonts/gotham/Gotham-Bold.eot') format('embedded-opentype'),
+    url('#{$static-path}/fonts/gotham/Gotham-Bold.woff2') format('woff2'),
+    url('#{$static-path}/fonts/gotham/Gotham-Bold.woff') format('woff'),
+    url('#{$static-path}/fonts/gotham/Gotham-Bold.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Plex';
+  font-family: 'Gotham';
   src:
-    url('#{$static-path}/fonts/IBMPlexSans-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
+    url('#{$static-path}/fonts/gotham/Gotham-BoldItalic.eot') format('embedded-opentype'),
+    url('#{$static-path}/fonts/gotham/Gotham-BoldItalic.woff2') format('woff2'),
+    url('#{$static-path}/fonts/gotham/Gotham-BoldItalic.woff') format('woff'),
+    url('#{$static-path}/fonts/gotham/Gotham-BoldItalic.ttf') format('truetype');
+  font-weight: bold;
   font-style: italic;
 }
 
-///////// Serif
-@font-face {
-  font-family: 'Crimson';
-  src:
-    url('#{$static-path}/fonts/CrimsonText-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Crimson';
-  src:
-    url('#{$static-path}/fonts/CrimsonText-Italic.ttf') format('truetype');
-  font-weight: 400;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Crimson';
-  src:
-    url('#{$static-path}/fonts/CrimsonText-SemiBold.ttf') format('truetype');
-  font-weight: 600;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Crimson';
-  src:
-    url('#{$static-path}/fonts/CrimsonText-SemiBoldItalic.ttf') format('truetype');
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'Crimson';
-  src:
-    url('#{$static-path}/fonts/CrimsonText-Bold.ttf') format('truetype');
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Crimson';
-  src:
-    url('#{$static-path}/fonts/CrimsonText-BoldItalic.ttf') format('truetype');
-  font-weight: 700;
-  font-style: italic;
-}
