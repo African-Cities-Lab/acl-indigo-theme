@@ -57,9 +57,6 @@ p a:visited:not(.btn):focus,
 .course-info .course-sidebar header .social-sharing .share:focus {
   color: #BE3712;
 }
-.home>header .title .course-search .search-button{
-      background: #BE3712;
-}
 .btn, .global-header .nav-links .secondary .btn {
   border-radius: .25rem;
 }
@@ -101,8 +98,17 @@ input[type="tel"]:focus {
 }
 .home>header .title .course-search .search-button,
 .find-courses .discovery-submit {
+  background: #BE3712;
   height: 50px;
   border: none;
+}
+.find-courses .discovery-submit:hover, 
+.find-courses .discovery-submit:focus {
+  background: #BE3712;
+}
+.find-courses .search-facets .facet-option:hover, 
+.find-courses .search-facets .facet-option:focus {
+  background: #BE3712;
 }
 
 .login-register .form-field label.focus-out, 
@@ -492,7 +498,7 @@ nav.wrapper-preview-menu {
 }
 
 .courses-container {
-  margin-top: 5rem;
+  margin-top: 1rem;
   margin-bottom: 6rem;
   .courses {
     .course {
@@ -583,7 +589,6 @@ nav.wrapper-preview-menu {
 
 ////////////////// Find Course 
 .find-courses .search-facets .facet-option {
-  color: #ffffff;
   font-size: 14px !important;
 }
 .find-courses {
