@@ -15,7 +15,12 @@ body, body.view-profile {
 %btn-pl-default-base {
   border-radius: .25rem;
 }
-
+img {
+    max-width: 100%;
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    height: auto;
+}
 .btn {
   font-family: $f-sans-serif !important;
   transition: color .15s ease-in-out,
@@ -52,7 +57,9 @@ p a:visited:not(.btn):focus,
 .course-info .course-sidebar header .social-sharing .share:focus {
   color: #BE3712;
 }
-
+.home>header .title .course-search .search-button{
+      background: #BE3712;
+}
 .btn, .global-header .nav-links .secondary .btn {
   border-radius: .25rem;
 }
