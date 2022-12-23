@@ -56,7 +56,7 @@ input[type="submit"], input[type="button"], button, .button {
 
 .highlighted-courses .courses .course:hover, .highlighted-courses .courses .course:focus, 
 .find-courses .courses .course:hover, .find-courses .courses .course:focus {
-  box-shadow: 0 rgba(190, 55, 18, .4) !important;
+  box-shadow: 0 0 0 0 rgba(190, 55, 18, .4) !important;
 }
   
 a, a:not(.btn):hover, a:not(.btn):focus, 
@@ -180,6 +180,16 @@ h2, .home>header .title>.heading-group p, section.outside-app h1 {
     border-color .15s ease-in-out,
     box-shadow .15s ease-in-out;
 }
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses:active:not(:disabled), 
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses:focus:not(:disabled), 
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:active:not(:disabled), 
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:focus:not(:disabled), 
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart:active:not(:disabled), 
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart:focus:not(:disabled) {
+  box-shadow: unset;
+}
+
+
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses:hover:not(:disabled), 
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover:not(:disabled), 
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart:hover:not(:disabled) {
@@ -563,11 +573,7 @@ nav.wrapper-preview-menu {
           height: 200px;
 
           .learn-more {
-            top: 75px;
-            left: calc(50% - 75px);
-            font-weight: 500;
-            width: auto;
-            font-size: 14px;
+            display: none;
           } 
         }
       }
@@ -590,6 +596,10 @@ nav.wrapper-preview-menu {
     }
   }
 }   
+
+.courses-container .courses .course .course-image .cover-image::before {
+  background: none;
+}
 /////////////////// Course overview
 .course-info .details h2 {
   font-size: 1.75rem;
@@ -659,12 +669,7 @@ nav.wrapper-preview-menu {
             height: 150px;
   
             .learn-more {
-              top: 50px;
-              left: calc(50% - 65px);
-              padding: 0 12px;
-              height: 40px;
-              line-height: 40px;
-              font-size: 12px;
+              display: none;
             } 
           }
         }
