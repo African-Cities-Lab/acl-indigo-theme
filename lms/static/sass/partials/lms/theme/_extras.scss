@@ -16,6 +16,9 @@ body, body.view-profile {
 %btn-pl-default-base {
   border-radius: .25rem;
 }
+.global-header .nav-links .nav-item a[href="/courses"]{
+  display: none;
+}
 img {
     max-width: 100%;
     -webkit-transition: all 0.3s ease-out 0s;
@@ -597,9 +600,17 @@ nav.wrapper-preview-menu {
   margin-bottom: 6rem;
   .courses {
     .course {
-      border: 1px solid #ececec;
+      border: unset;
       border-radius: 0.25rem;
-
+      border-bottom: 6px solid #402781;
+      transition: 0.5s;
+      &:hover {
+        background: unset;
+        border-bottom: 6px solid #402781;
+        border-top: 1px solid rgba(0,0,0,.125);
+        border-left: 1px solid rgba(0,0,0,.125);
+        border-right: 1px solid rgba(0,0,0,.125);
+      }
       .course-image {
         .cover-image {
           height: 200px;
@@ -610,14 +621,23 @@ nav.wrapper-preview-menu {
         }
       }
       .course-info {
+        .course-code {
+          display: none;
+        }
         .course-title {
+          margin: 12px 0 35px 0;
+          line-height: 26px;
           font-size: 20px;
-          font-weight: 700;
+          font-weight: 500;
+          color: #000;
         }
         .course-organization {
           padding: 17px 15px 2px 15px;
           color: #000;
           font-size: 18px;
+        }
+        .course-date {
+          color: #BE3712;
         }
       }
     }
@@ -700,6 +720,17 @@ nav.wrapper-preview-menu {
   .courses-container {
     .courses {
       .course {
+        border: unset;
+        border-radius: 0.25rem;
+        border-bottom: 6px solid #402781;
+        transition: 0.5s;
+        &:hover {
+          background: unset;
+          border-bottom: 6px solid #402781;
+          border-top: 1px solid rgba(0,0,0,.125);
+          border-left: 1px solid rgba(0,0,0,.125);
+          border-right: 1px solid rgba(0,0,0,.125);
+        }
         .course-image {
           .cover-image {
             height: 150px;
