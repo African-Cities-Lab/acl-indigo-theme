@@ -16,9 +16,6 @@ body, body.view-profile {
 %btn-pl-default-base {
   border-radius: .25rem;
 }
-.global-header .nav-links .nav-item a[href="/courses"]{
-  display: none;
-}
 img {
     max-width: 100%;
     -webkit-transition: all 0.3s ease-out 0s;
@@ -193,8 +190,7 @@ h2, .home>header .title>.heading-group p, section.outside-app h1 {
   height: 100%;
 }
 
-.course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses, 
-.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register, 
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses,
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart {
     border: none;
     border-bottom: none;
@@ -215,6 +211,29 @@ h2, .home>header .title>.heading-group p, section.outside-app h1 {
     border-color .15s ease-in-out,
     box-shadow .15s ease-in-out;
 }
+
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register {
+    border: none;
+    border-bottom: none;
+    border-radius: 5px;
+    box-shadow: unset;
+    background-color: #402781;
+    background-image: unset;
+    background-image: unset;
+    text-shadow: none;
+    box-sizing: border-box;
+    border-radius: 3px;
+    display: block;
+    padding: 1rem 2rem; 
+    font-weight: 500;
+    font-size: 1.3rem;
+    font-family: $f-sans-serif !important;
+    transition: color .15s ease-in-out,
+    background-color .15s ease-in-out,
+    border-color .15s ease-in-out,
+    box-shadow .15s ease-in-out;
+}
+
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses:active:not(:disabled), 
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses:focus:not(:disabled), 
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:active:not(:disabled), 
@@ -224,10 +243,16 @@ h2, .home>header .title>.heading-group p, section.outside-app h1 {
   box-shadow: unset;
 }
 
-
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses:hover:not(:disabled), 
-.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover:not(:disabled), 
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart:hover:not(:disabled) {
+    background-color: #FFF;
+    color: #402781;
+    border: none;
+    background-image: unset;
+    background-image: unset;
+}
+
+.course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register:hover:not(:disabled) {
     background-color: #FFF;
     color: #BE3712;
     border: 1px solid #BE3712;
@@ -386,7 +411,8 @@ header.global-header {
     overflow: visible;  // fix for Safari
   }
   //background-color: #4c61bf;
-  box-shadow: none;
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+  border: none;
 }
 
 header.global-header .nav-links .secondary .user-image-frame {
@@ -548,15 +574,24 @@ nav.wrapper-preview-menu {
 /// 
 
 .course-info header.course-profile {
-  margin-bottom: 3rem;
-  box-shadow: none;
-  border-bottom: none;
-  background: #402781;
+    box-shadow: none;
+    border-bottom: none;
+    background: rgb(190,55,18);
+    background: linear-gradient(90deg, rgba(190,55,18,0.98) 0%, rgba(128,47,72,0.98) 54%, rgba(64,39,129,1) 100%);
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
 
   .intro-inner-wrapper {
     border: none;
     box-shadow: none;
-    background: #402781;
+    background: rgb(190,55,18);
+    background: linear-gradient(90deg, rgba(190,55,18,0.98) 0%, rgba(128,47,72,0.98) 54%, rgba(64,39,129,1) 100%);
+    position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
   }
 }
 
@@ -584,12 +619,14 @@ nav.wrapper-preview-menu {
       border-color .15s ease-in-out,
       box-shadow .15s ease-in-out;
       box-shadow: unset;
-      background-color: #BE3712;
+      background-color: #402781;
       border: none;
       border-bottom: none;
       text-shadow: none;
       &:hover:not(:disabled) {
         background-image: none;
+        background-color: #FFF;
+        color: #BE3712;
       }
     }
   }
@@ -681,6 +718,10 @@ nav.wrapper-preview-menu {
 .course-info header.course-profile .intro-inner-wrapper .media {
   width: 40%;
 }
+.course-info header.course-profile .intro-inner-wrapper .media .hero {
+  border: none;
+  height: auto;
+}
 .courses-container .courses .course .course-image .cover-image::before {
   height: 200px;
 }
@@ -694,8 +735,14 @@ nav.wrapper-preview-menu {
   color: #fff;
 }
 .course-info header.course-profile .intro-inner-wrapper .intro>.heading-group h1 {
-  font-size: 2.25rem;
   color: #fff;
+  font-weight: 500;
+  font-size: 38px;
+}
+.course-info header.course-profile .intro-inner-wrapper .intro>.heading-group span {
+    margin: 1rem 0;
+    font-size: 16px;
+    display: block;
 }
 .course-info header.course-profile .intro-inner-wrapper>div.table {
   margin-right: auto;
@@ -874,7 +921,6 @@ nav.wrapper-preview-menu {
     height: 350px;
   }
   .course-info header.course-profile .intro-inner-wrapper .media .hero img {
-    height: 100%;
     object-fit: cover;
   }
 }
@@ -1018,6 +1064,13 @@ nav.wrapper-preview-menu {
   .home > header .title > .heading-group h1 {
     font-size: 2em;
   }
+  .course-info header.course-profile {
+    background: linear-gradient(28deg, rgba(190,55,18,0.98) 0%, rgba(128,47,72,0.98) 54%, rgba(64,39,129,1) 100%);
+
+  .intro-inner-wrapper {
+    background: linear-gradient(28deg, rgba(190,55,18,0.98) 0%, rgba(128,47,72,0.98) 54%, rgba(64,39,129,1) 100%);
+  }
+}
 }
 
 
